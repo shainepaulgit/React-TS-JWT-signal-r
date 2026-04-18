@@ -6,7 +6,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [mode, setMode] = useState<"light" | "dark">(
     (localStorage.getItem("theme") as "light" | "dark") || "dark"
   );
-  const [accent, setAccent] = useState<string>("red"/*localStorage.getItem("accent") || "blue"*/);
+  const [accent, setAccent] = useState<string>(localStorage.getItem("accent") || "blue");
 
   const accentMap: Record<string, { name: string; value: string }> = {
     green: { name: "Green", value: "#00b57e" },
